@@ -1,0 +1,45 @@
+1. Explain the difference between SQL and NoSQL databases. What are the advantages and disadvantages of each?
+    Answer: 
+        SQL databases are structured and use tables to store data.
+            Advantages:
+                - Has a clear structure.
+                - Has strong rules to keep data accurate and consistent.
+                - Good for complex queries and reports.
+
+            Disadvantages:
+                - It is not suitable for handling a lot of changing or unpredictable data.
+                - It is not flexible to scale the system.
+        
+        NoSQL databases are flexible and can store unstructured data in various formats.
+            Advantages:
+                - Fast-moving projects When data changes a lot.
+                - Handling huge amounts of data across many servers.
+                - Good for storing things like user profiles, chat messages, or real-time analytics.
+            
+            Disadvantages:
+                - It enforces strict rules to ensure perfect data consistency.
+                - Limited query capability.
+
+
+2. Have you ever worked with microservices architectures? If so, can you explain the benefits and drawbacks of this approach?
+    Answer:
+        Benefits of Microservices:
+            - Scalable independently
+            - Flexible technology choices
+            - Better fault isolation
+            - Faster development and deployment
+            - Easier to maintain and update
+            - Fits well with Agile and DevOps
+
+        Drawbacks of Microservices:
+            - More complex to manage
+            - Challenges with distributed communication and data consistency
+            - Harder testing and deployment
+            - Potential performance overhead due to network calls
+            - Complex data management across services
+
+
+3. Describe your experience with caching in backend applications. When would you use caching, and what tools or frameworks do you prefer?
+    Answer:
+        I implement caching to prevent redundant data loading, particularly for data that changes infrequently.
+        tools: node-cash,memory-cash
