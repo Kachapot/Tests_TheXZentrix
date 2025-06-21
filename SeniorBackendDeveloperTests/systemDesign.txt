@@ -1,0 +1,108 @@
+Clients:
+ 	Web or Mobile Application
+
+Service:
+	User Service
+	Product Catalog Service
+	Cart and Order Service
+	Payment Service
+	Inventory Service
+    Shipping Integration Service
+    Notification Service
+
+External Services (3rd Party APIs):
+    Payment Gateway
+    Shipping Service
+    Inventory Provider
+
+Database:
+	users_tb
+		user_id	    UUID
+		password_hash VARCHAR(255)
+        email		VARCHAR(255)
+		create_at	TIMESTAMP	
+		update_at	TIMESTAMP
+		status		BOOLEAN
+		is_active	BOOLEAN
+
+	cart_tb
+		cart_id		UUID
+		user_id	    UUID
+		items		JSONB
+		update_at 	TIMESTAMP
+
+	order_tb
+		order_id	UUID
+		user_id	    UUID
+		status		VARCHAR(255)
+		total_amout	DECIMAL(10,2)
+		items		JSONB
+		create_at	TIMESTAMP
+		
+	inventory_tb
+		product_id	UUID
+		quantity	INT
+		location	VARCHAR(100)
+		update_at	TIMESTAMP
+			
+    product_tb
+		product_id	UUID
+		cate_id		UUID
+		name		VARCHAR(255)
+		description	TEXT
+		price		DECIMAL(10,2)
+		tags		JSONB
+		is_available	BOOLEAN
+		create_at	TIMESTAMP	
+		
+	category_tb
+		cate_id		UUID
+        name		VARCHAR(255)
+        status		BOOLEAN
+        update_at	TIMESTAMP
+
+	payment_tb
+        payment_id	UUID
+        order_id	UUID
+        tran_id     UUID
+        amount	    DECIMAL(10,2)
+        payment_type	VARCHAR(50)
+        status		VARCHAR(50)
+        create_at   TIMESTAMP
+        update_at   TIMESTAMP
+
+	transactions_tb
+        tran_id     UUID
+        user_id     UUID
+        order_id    UUID
+        tran_name   VARCHAR(255)
+        tran_type   VARCHAR(50)
+        amount      DECIMAL(10,2)
+
+	log_login
+		log_id		UUID
+		user_id		UUID
+		platform	VARCHAR(100)
+		user_ip		VARCHAR(255)
+		status		VARCHAR(50)
+		create_at	TIMESTAMP
+        
+	log_payment
+		log_id		UUID
+		payment_id	UUID
+		tran_id		UUID
+		amount		DECIMAL(10,2)
+		status		VARCHAR(50)
+		description	TEXT
+		create_at	TIMESTAMP
+	
+	log_orders
+		log_id		UUID
+		order_id	UUID
+		status		VARCHAR(50)
+		context		JSONB
+		description	TEXT
+		create_at	TIMESTAMP
+
+
+
